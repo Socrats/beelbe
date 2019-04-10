@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-08 14:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: beelbe/settings.py:128
+msgid "English"
+msgstr "Engels"
+
+#: beelbe/settings.py:129
+msgid "Dutch"
+msgstr "Nederlands"
+
+#: beelbe/settings.py:130
+msgid "French"
+msgstr "Frans"
+
+#: templates/admin/index.html:20
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr "Modellen in de %(name)s applicatie"
+
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr "Voeg toe"
+
+#: templates/admin/index.html:37
+msgid "Change"
+msgstr "Verander"
+
+#: templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr "U hebt de toelating niet om iets te wijzigen."
+
+#: templates/admin/index.html:55
+msgid "Recent actions"
+msgstr "Recente acties"
+
+#: templates/admin/index.html:56
+msgid "My actions"
+msgstr "Mijn acties"
+
+#: templates/admin/index.html:60
+msgid "None available"
+msgstr "Niets beschikbaar"
+
+#: templates/admin/index.html:74
+msgid "Unknown content"
+msgstr "Onbekende inhoud"

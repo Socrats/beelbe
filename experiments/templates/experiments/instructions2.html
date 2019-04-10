@@ -1,0 +1,51 @@
+{% extends "experiments/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "BEEL-Instructions" %}{% endblock %}
+
+{% block headname %}{% trans "Instructions" %}{% endblock %}
+
+{% block content %}
+    <p class="w3-opacity"><b>Instructions 1/4</b></p>
+    <div class="w3-panel w3-white w3-card-2 w3-display-container w3-padding-16 w3-margin-4">
+        <a href="{% url 'experiments:test' participant.session_id %}">Click here to do the test</a>
+
+        <div>
+            <p><b>Please read the following instructions carefully</b>. All the information contained here has also been
+                given to you in printed format.</p>
+
+            <h3>General Information</h3>
+            <p>
+                At the beginning of the experiment you will be randomly divided into <b>groups of 6 members each</b>.
+                During
+                the
+                whole experiment, you will interact only within your group. At the beginning of the experiment every
+                participant
+                receives an endowment of 40 EMUs (experimental money units) that will be later translated into real
+                currency
+                (euros) with a rate of 2 to 1.
+            </p>
+            <p>
+                During the game, each member of the group will be able to invest the money received as an endowment in a
+                <b>climate account</b> through several rounds.
+            </p>
+            <p>
+                The climate accounts assigned to each group have a <b>minimum investment objective of 120 EMUs</b>. This
+                means
+                that if the accumulated contributions to the account after the experiment end, are equal or higher than
+                120
+                EMUs, then each member of the group will be able to keep the amount of the endowment that they didn’t
+                invest.
+            </p>
+            <p>
+                However, <b>if this minimum is not reached</b>, the computer will “throw a dice” so that <b>all group
+                members
+                will lose all their saving with a certain probability</b> p that will be communicated to you at the
+                beginning of
+                the experiment.
+            </p>
+        </div>
+
+    </div>
+{% endblock %}

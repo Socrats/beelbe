@@ -1,0 +1,67 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}"/>{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block content %}
+    <div id="content-main">
+        <div class="w3-row w3-margin-top">
+            <div class="w3-col m3 w3-white w3-card-2 w3-center">
+                <header class="w3-container w3-green">
+                    <h3>{% trans "Select experiment to run now" %}</h3>
+                </header>
+                <form class="w3-border-0 w3-margin-top" id="exp-update" method="post">
+                    {% csrf_token %}
+                    <div class="w3-reponsive">
+                        {{ form.as_p }}
+                    </div>
+                    <button type="submit" value="run" class="btn btn-info">{% trans "Update" %}</button>
+                </form>
+            </div>
+            <div class="w3-col m1 w3-center"><p></p></div>
+            <div class="w3-col m8 w3-white w3-card-2">
+                <header class="w3-container w3-blue w3-center">
+                    {% blocktrans with experiment_name=session.experiment.experiment_name treatment_name=session.treatment.treatment_name session_number=session.session_number%}
+                        Experiment: {{ experiment_name }} | Treatment: {{ treatment_name }} | Session: {{ session_number }}
+                    {% endblocktrans %}
+                    <h3>{% trans "Players" %}</h3>
+                </header>
+                <table class="w3-table w3-striped w3-hoverable">
+                    <tr>
+                        <th>User</th>
+                        <th>Player</th>
+                        <th>Private account</th>
+                        <th>group</th>
+                        <th>participated</th>
+                        <th>finished</th>
+                        <th>experiment state</th>
+                        <th>language</th>
+                        <th>time_start_experiment</th>
+                    </tr>
+                    {% for player in players %}
+                        <tr>
+                            <td>{{ player.user }}</td>
+                            <td>{{ player.pk }}</td>
+                            <td>{{ player.profile.private_account }}</td>
+                            <td>{{ player.group.group_number }}</td>
+                            <td>{{ player.profile.participated }}</td>
+                            <td>{{ player.profile.finished }}</td>
+                            <td>{{ player.profile.experiment_state }}</td>
+                            <td>{{ player.profile.language }}</td>
+                            <td>{{ player.profile.time_start_experiment }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <a href="{% url 'experiments:monitor' run_now.session_id %}"
+                   class="btn btn-info center-block">{% trans "Monitor Game" %}</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

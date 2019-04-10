@@ -1,0 +1,19 @@
+{% extends "experiments/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "BEEL-Good Bye" %}{% endblock %}
+
+{% block content %}
+
+    <div class="w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+        <h2>{% trans "Thank you for participating!" %}</h2>
+        <p>
+            {% blocktrans %}
+                Before leaving, please click on the following link to logout.
+            {% endblocktrans %}
+        </p>
+        <a href="{% url 'experiments:logout' %}">Click to logout!</a>
+    </div>
+
+{% endblock %}

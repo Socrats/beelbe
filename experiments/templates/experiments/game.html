@@ -1,0 +1,108 @@
+{% extends "experiments/base_game.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+
+{% block title %}{% trans "BEEL-Experiment" %}{% endblock %}
+
+{% block content %}
+    <div class="w3-row w3-margin-top">
+        <div class="w3-light-grey w3-round-large w3-margin-bottom">
+            <div class="w3-container w3-blue w3-round-large w3-center"
+                 style="width:{{ round.percentage|unlocalize }}%">
+                {% if is_round_variable %}
+                    {% blocktrans with current_round=round.norm total_rounds=round.total_rounds %}
+                        round {{ current_round }} of minimum {{ total_rounds }}
+                    {% endblocktrans %}
+                {% else %}
+                    {% blocktrans with current_round=round.norm total_rounds=round.total_rounds %}
+                        round {{ current_round }} of {{ total_rounds }}
+                    {% endblocktrans %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="w3-row">
+
+        {#    The table should be dimmed in the first round when there is no data available#}
+
+        <div class="w3-col m9 l9 w3-padding-right">
+            <div class="w3-row w3-white w3-card-2">
+                <header class="w3-container bg-info text-white w3-center w3-padding-top">
+                    <h3 class="w3-text-white">{% trans "Donations of the previous round" %}</h3>
+                </header>
+                {% if last_round_actions_others or player_last_action %}
+                    <table class="w3-table w3-hoverable">
+                        <tr>
+                            <th class="w3-light-blue text-white w3-border-bottom w3-border-cyan text-center">{% trans "You" %}</th>
+                            <th class="w3-border-bottom text-center" colspan="{{ last_round_actions_others|length }}">
+                                {% trans "Other members of the group" %}
+                            </th>
+                        </tr>
+                        <tr>
+                            <td class="w3-light-blue text-white w3-border-right text-center">{{ player_last_action }}</td>
+                            {% for action in last_round_actions_others %}
+                                <td class="text-center">{{ action }}</td>
+                            {% endfor %}
+                        </tr>
+                    </table>
+                {% else %}
+                    {% trans "No actions to show" %}
+                {% endif %}
+            </div>
+            <div class="w3-row w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+                <div class="w3-margin-top w3-large">
+                    <p class="w3-left-align w3-border-bottom">
+                        {% blocktrans %}
+                            How many {{ currency_name }} do you want to contribute to the public account in this
+                            round?
+                        {% endblocktrans %}
+                    </p>
+                    <p>
+                        {% trans "Select one of the following options." %}
+                    </p>
+                    <form class="w3-center" id="rdaction"
+                          action="{% url 'experiments:game_round' player.session_id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" id="roundstarts" name="time_round_start" value="0">
+                        <input type="hidden" id="roundends" name="time_round_end" value="0">
+                        <input type="hidden" id="timeelapsed" name="time_elapsed" value="0">
+                        <input type="hidden" id="actionhid" name="action" value="0">
+                        {% for action_value in valid_actions %}
+                            {% if player.profile.private_account|add:"0" < action_value|add:"0" %}
+                                <button type="submit" class="btn btn-info btn-lg" name="action_btn"
+                                        value="{{ action_value }}" disabled>{{ action_value }}
+                                </button>
+                            {% else %}
+                                <button type="submit" class="btn btn-info btn-lg" name="action_btn"
+                                        value="{{ action_value }}">{{ action_value }}
+                                </button>
+                            {% endif %}
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col m3 l3 w3-padding-left">
+            <div class="w3-row w3-white w3-card-2" id="countcontainer">
+                <header class="w3-container bg-info text-white w3-center w3-padding-top">
+                    <h3>{% trans "Time left" %}</h3>
+                </header>
+                <h3 id="countdown" class="w3-center w3-padding-top">
+                    <span class="minutes">2</span>:<span class="seconds">00</span>
+                </h3>
+
+            </div>
+            <div class="w3-row w3-white w3-card-2 w3-margin-top">
+                <header class="w3-container bg-info text-white w3-center w3-padding-top">
+                    <h3>{% trans "Personal Account" %}</h3>
+                </header>
+                <h3 class="w3-center w3-padding-top">{{ player.profile.private_account }} EMUs</h3>
+            </div>
+        </div>
+    </div>
+
+    {#    Need to add here the table with the results on the left and make it only available after the2 round#}
+
+{% endblock %}

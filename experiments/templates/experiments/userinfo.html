@@ -1,0 +1,27 @@
+{% extends "experiments/base_no_footer.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "BEEL-Survey" %}{% endblock %}
+
+{% block headname %}{% trans "Survey" %}{% endblock %}
+
+{% block content %}
+
+    <div class="w3-container w3-card-4 w3-margin w3-white">
+
+        <h2 class="w3-opacity w3-padding-top">
+            {% blocktrans %}
+                Please, fill in the following survey.
+            {% endblocktrans %}
+        </h2>
+
+        <form class="w3-border-0 w3-padding" action=""
+              method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-info" value={% trans "Submit" %}>
+        </form>
+
+    </div>
+
+{% endblock %}

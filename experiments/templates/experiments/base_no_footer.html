@@ -1,0 +1,47 @@
+{% load static %}
+{% load i18n %}
+
+<title>{% block title %}{% trans "BEEL-Experiments" %}{% endblock %}</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'experiments/css/style.css' %}"/>
+<link rel="stylesheet" href="{% static 'experiments/css/w3.css' %}">
+<link rel="stylesheet" href="{% static 'experiments/css/w3-theme-blue-grey.css' %}">
+<link rel="stylesheet" href="{% static 'experiments/css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'experiments/bootstrap-4/css/bootstrap.min.css' %}">
+
+<script src="{% static 'experiments/scripts/jquery-3.2.0.min.js' %}"></script>
+<script src="{% static 'experiments/bootstrap-4/js/bootstrap.min.js' %}"></script>
+
+<body class="w3-theme-l4" style="font-family: 'Raleway', sans-serif; font-size: 16px">
+<div style="min-width:400px">
+    <div class="w3-bar w3-black w3-card-4">
+        {% block menubar %}
+            <span class="w3-bar-item w3-green w3-padding-16 w3-xlarge">BEEL</span>
+            <span class="w3-bar-item w3-padding-16 w3-xlarge">{% block headname %}{% endblock %}</span>
+            <div class="w3-bar-item w3-right">
+                <img src="{% static "experiments/images/logo4_0.png" %}"
+                     style="width:48px;height:48px;">
+                <img src="{% static "experiments/images/ulbgiggrand.gif" %}"
+                     style="width:48px;height:48px;">
+                <img src="{% static "experiments/images/fwo_blokbeeld.jpeg" %}"
+                     style="width:48px;height:48px;">
+            </div>
+        {% endblock %}
+    </div>
+
+    <div id="content" class="w3-container w3-content w3-margin-8">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        window.location.hash = "no-back-button";
+        window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+        window.onhashchange = function () {
+            window.location.hash = "no-back-button";
+        }
+    });
+</script>

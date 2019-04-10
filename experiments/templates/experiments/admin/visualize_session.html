@@ -1,0 +1,36 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href={% static "experiments/css/admin_graph.css" %}>
+{% endblock %}
+
+{% block javascript %}
+    <script src={% static "experiments/scripts/jquery-3.2.0.min.js" %}></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src={% static "experiments/scripts/plotresadmin.js" %}></script>
+
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a> &rsaquo;
+        <a href="{% url 'experiments:admin' %}">{% trans 'Experiments admin' %}</a>
+        {% block crumbs %}
+            {% if title %} &rsaquo; {{ title }}{% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Monitor Session {{ session.id }}</h1>
+    <div id="id_plot_session" class="js-plot-results" data-url={% url "experiments:fetch_data" %}>
+    <div id="id_sess_data_table" class="js-data-table"></div>
+    </div>
+
+
+    <a href="{% url 'experiments:admin' %}" class="btn btn-info">{% trans "Back to admin" %}</a>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}"/>{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block content %}
+    <div id="content-main">
+        <div class="w3-bar w3-light-grey w3-border">
+            <a href="#" class="w3-bar-item w3-button w3-green"><i class="fa fa-home"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
+            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-sign-in"></i></a>
+        </div>
+        <div class="w3-row w3-margin-top">
+            <div class="w3-col m3 w3-white w3-card-2 w3-center">
+            </div>
+            <div class="w3-col m1 w3-center"><p></p></div>
+            <div class="w3-col m8 w3-white w3-card-2">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

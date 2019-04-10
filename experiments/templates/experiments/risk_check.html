@@ -1,0 +1,66 @@
+{% extends "experiments/base_game.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{% trans "BEEL-Experiment" %}{% endblock %}
+
+{% block headname %}{% trans "Result" %}{% endblock %}
+
+{% block content %}
+    <h2 class="w3-opacity">{% trans "Results" %}</h2>
+
+    <div class="w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+        <div>
+            {% if return_state == 'LOSS' %}
+                <div class="alert alert-danger w3-margin-top">
+                    {% blocktrans %}
+                        Your group collected {{ public_account }} EMUs, which is lower than {{ threshold }} EMUs. The
+                        server has generated a random number between 1 and 100. The resulting value is {{ random_value }}, which
+                        is smaller than 91. This means that you all <b>lose the remaining endowment</b> in your private
+                        accounts. Please fill in the amount in Euro’s you see on this screen on the payment document you
+                        received before clicking the continue button. This amount is the show-up fee.”
+                    {% endblocktrans %}
+                </div>
+            {% elif return_state == 'NLOSS' %}
+                <div class="alert alert-warning w3-margin-top">
+                    {% blocktrans %}
+                        Your group collected {{ public_account }} EMUs, which is lower than {{ threshold }} EMUs. The
+                        server has generated a random number between 1 and 100. The resulting value is {{ random_value }}, which
+                        is bigger than 90. This means that you all <b>win the remaining endowment</b> in your private
+                        accounts. Please fill in the amount in Euro’s you see on this screen on the payment document you
+                        received before clicking the continue button. This amount consists of both your private winnings
+                        and the show-up fee.
+                    {% endblocktrans %}
+                </div>
+            {% else %}
+                <div class="alert alert-success w3-margin-top">
+                    {% blocktrans %}
+                        CONGRATULATIONS! ! Your group collected {{ public_account }} EMUs, which is greater or equal to
+                        {{ threshold }} EMUs. So <b>you may keep the amount remaining in your private account</b>.
+                        Please fill in the amount in Euro’s you see on this screen on the payment document you received
+                        before clicking the continue button. This amount consists of both your private winnings and the
+                        show-up fee.”
+                    {% endblocktrans %}
+                </div>
+            {% endif %}
+            <div class="text-center">
+                {% blocktrans with emus=gain.emus euros=gain.euros %}
+                    The amount remaining on your private account is {{ emus }} EMUs and your final winnings are
+                    {{ euros }} euros.
+                {% endblocktrans %}
+            </div>
+            <div class="w3-margin-bottom">
+                {% blocktrans %}
+                    Please, click <b>next</b>, and complete a quick questionnaire.
+                {% endblocktrans %}
+            </div>
+        </div>
+
+        <!-- add here a timeout -->
+        <a href="{% url 'experiments:userinfo' session_id %}" class="btn btn-info btn-block">
+            {% trans "Next" %}
+        </a>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "experiments/base_game.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+
+{% block title %}{% trans "BEEL-Experiment" %}{% endblock %}
+
+{% block optional_scripts %}
+    <script src="{% static 'experiments/scripts/predman.js' %}"></script>
+{% endblock %}
+
+{% block headname %}{% trans "Game" %}{% endblock %}
+
+{% block content %}
+    <div class="w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+        <div class="w3-light-grey w3-round-large w3-margin-bottom">
+            <div class="w3-container w3-blue w3-round-large w3-center"
+                 style="width:{{ round.percentage|unlocalize }}%">
+                {% if is_round_variable %}
+                    {% blocktrans with current_round=round.norm total_rounds=round.total_rounds %}
+                        round {{ current_round }} of minimum {{ total_rounds }}
+                    {% endblocktrans %}
+                {% else %}
+                    {% blocktrans with current_round=round.norm total_rounds=round.total_rounds %}
+                        round {{ current_round }} of {{ total_rounds }}
+                    {% endblocktrans %}
+                {% endif %}
+            </div>
+        </div>
+        <form class="w3-center" id="rdaction"
+              action="{% url 'experiments:results_round' player.session_id %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" id="roundstarts" name="time_round_start" value="0">
+            <input type="hidden" id="roundends" name="time_round_end" value="0">
+            <input type="hidden" id="timeelapsed" name="time_elapsed" value="0">
+            <h5>{{ prediction_question }}: </h5>
+            <input type="number" id="prediction" name="prediction">
+            <input type="submit" class="btn btn-info btn-sm" value={% trans "Submit" %}>
+            <div id="intErrorMessage" class="alert alert-danger" role="alert"
+                 style="display: none; margin: 1%">{% trans "please, submit an integer!" %}</div>
+        </form>
+    </div>
+
+    {% if show_dice_result %}
+        <div id="game_end" class="alert-info" style="display: none;">
+            {% if game_end %}
+                {% blocktrans %}
+                    The result of the dice was {{ dice_result }}. Therefore, the experiment will end.
+                    Please, click now on the button Ok.
+                {% endblocktrans %}
+            {% else %}
+                {% blocktrans %}
+                    The result of the dice was {{ dice_result }}, which is different from
+                {% endblocktrans %}
+                {% for i in accepted_dice_values %}
+                    "{{ i }}"{% if not forloop.last %} {% trans "or" %} {% endif %}
+                {% endfor %}.
+                {% blocktrans %}
+                    Therefore, the experiment will continue to the next round.
+                    Please, click now on the button Ok.
+                {% endblocktrans %}
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <div class="w3-row">
+        <div class="w3-col m3 w3-white w3-card-2" id="countcontainer">
+            <header class="w3-container w3-green w3-center w3-padding-top">
+                <h3>{% trans "Time left" %}</h3>
+            </header>
+            <h3 id="countdown" class="w3-center w3-padding-top">
+                <span class="minutes">2</span>:<span class="seconds">00</span>
+            </h3>
+        </div>
+        <div class="w3-col m6 w3-center"><p></p></div>
+        <div class="w3-col m3 w3-white w3-card-2">
+            <header class="w3-container w3-green w3-center w3-padding-top">
+                <h3>{% trans "Personal Account" %}</h3>
+            </header>
+            <h3 class="w3-center w3-padding-top">{{ player.profile.private_account }} EMUs</h3>
+        </div>
+    </div>
+
+{% endblock %}

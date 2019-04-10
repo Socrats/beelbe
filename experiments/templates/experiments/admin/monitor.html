@@ -1,0 +1,72 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a> &rsaquo;
+        <a href="{% url 'experiments:admin' %}">{% trans 'Experiments admin' %}</a>
+        {% block crumbs %}
+            {% if title %} &rsaquo; {{ title }}{% endif %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Monitor Session {{ session.id }}</h1>
+    <div class="w3-row w3-margin-top w3-margin-bottom">
+        {% for group in groups %}
+            <div class="w3-col m3 w3-white w3-card-2 w3-center">
+                <header class="w3-container w3-green">
+                    <h3>{% blocktrans with group.group_number as group_number %}Group
+                        {{ group_number }} {% endblocktrans %}</h3>
+                    {% if deadline_variable %}
+                        {% blocktrans with group.finishing_round as finishing_round and group.dice_results as dice_results %}
+                            final round: {{ finishing_round }} dice_results: {{ dice_results }}
+                        {% endblocktrans %}
+                    {% endif %}
+                </header>
+                <table class="w3-table w3-striped w3-hoverable">
+                    <tr>
+                        <th>User</th>
+                        <th>Player</th>
+                        <th>Private account</th>
+                        <th>experiment state</th>
+                        <th>transition state</th>
+                        <th>active</th>
+                        <th>current round</th>
+                        <th>threshold state</th>
+                        <td>euros</td>
+                    </tr>
+                    {% for member in group.members.all %}
+                        <tr>
+                            <td>{{ member.user }}</td>
+                            <td>{{ member.pk }}</td>
+                            <td>{{ member.profile.private_account }}</td>
+                            <td>{{ member.profile.experiment_state }}</td>
+                            <td>{{ member.profile.transition_state }}</td>
+                            <td>{{ member.user.is_active }}</td>
+                            <td>{{ member.profile.last_round }}</td>
+                            <td>{{ member.profile.get_threshold_state_display }}</td>
+                            <td>{{ member.profile.get_value_in_euros }}</td>
+                        </tr>
+                    {% empty %}
+                        {% trans "No active members in the group." %}
+                    {% endfor %}
+                </table>
+                <div>
+                    <h5>{% trans "Public account" %}</h5>
+                    <div class="w3-dark-grey w3-round-large w3-margin-bottom">
+                        <div class="w3-container w3-blue w3-round-large w3-center"
+                             style="width:{{ group.public_account }}%">{{ group.public_account }}/{{ threshold }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col s1 w3-center"><p></p></div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'experiments:admin' %}" class="btn btn-info">{% trans "Back to admin" %}</a>
+
+{% endblock %}

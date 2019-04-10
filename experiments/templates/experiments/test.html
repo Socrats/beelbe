@@ -1,0 +1,41 @@
+{% extends "experiments/base_no_footer.html" %}
+{% load static %}
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %}{% trans "BEEL-Test" %}{% endblock %}
+
+{% block headname %}{% trans "Test" %}{% endblock %}
+
+{% block content %}
+
+    <div class="w3-container w3-card-4 w3-margin w3-white">
+        <h2 class="w3-opacity w3-padding-top">
+            {% blocktrans %}
+                Please, complete the following test to check your comprehension of the instructions:
+            {% endblocktrans %}
+        </h2>
+
+        <form class="w3-border-0 w3-padding" action=""
+              method="post">{% csrf_token %}
+            {{ form.non_field_errors }}
+
+            {% for hidden_field in form.hidden_fields %}
+                {{ hidden_field.errors }}
+                {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                <p>
+                    {{ field.label_tag }}
+                    {{ field.errors }}
+                    {{ field }}
+                    {{ field.help_text }}
+                </p>
+            {% endfor %}
+            <input type="submit" class="btn btn-info" value={% trans "Submit" %}>
+        </form>
+    </div>
+
+{% endblock %}

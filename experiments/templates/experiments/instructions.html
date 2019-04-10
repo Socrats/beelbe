@@ -1,0 +1,39 @@
+{% extends "experiments/base_no_footer.html" %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+
+{% block title %}{% trans "BEEL-Instructions" %}{% endblock %}
+
+{% block headname %}{% trans "Instructions" %}{% endblock %}
+
+{% block content %}
+    <div class="w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+        <div class="w3-light-grey w3-round-large w3-margin-bottom">
+            <div class="w3-container w3-blue w3-round-large w3-center"
+                 style="width:{{ fraction|unlocalize }}%">
+                {{ instructions.number }}/{{ instructions.paginator.num_pages }}
+            </div>
+        </div>
+
+        {% for instruction in instructions %}
+            {{ instruction|safe }}<br/>
+        {% endfor %}
+
+        <div class="w3-bar w3-border w3-round">
+            {% if instructions.has_previous %}
+                <a href="?page={{ instructions.previous_page_number }}" class="w3-button" style="text-decoration: none">&#10094;
+                    {% trans "Previous" %}</a>
+            {% endif %}
+            {% if instructions.has_next %}
+                <a href="?page={{ instructions.next_page_number }}" class="w3-button w3-right"
+                   style="text-decoration: none">{% trans "Next" %} &#10095;</a>
+            {% else %}
+                <a href="{% url 'experiments:test' player.session_id %}" class="w3-button w3-right w3-green"
+                   style="text-decoration: none">{% trans "Next" %} &#10095;</a>
+            {% endif %}
+        </div>
+
+    </div>
+
+{% endblock %}

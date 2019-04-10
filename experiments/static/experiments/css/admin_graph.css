@@ -1,0 +1,66 @@
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+th, td {
+    font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size:1em;
+    padding-left:7px;
+    padding-right:7px;
+    padding-top:4px;
+    padding-bottom:4px;
+    vertical-align:middle;
+    text-align:center;
+}
+
+th {
+    color:white;
+    background-color:steelblue;
+}
+
+
+td {
+    border:1px solid steelblue;
+}
+
+td.rowkey {
+    text-align:left;
+}
+
+
+tr:hover {
+    color:#000000;
+    background-color:#E0E0E0;
+}
+
+
+tr[chosen=true] {
+    background-color:#B5CDE1;
+}
+
+#id_sess_data_table {
+	margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 70%;
+}

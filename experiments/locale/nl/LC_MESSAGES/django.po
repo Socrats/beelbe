@@ -1,0 +1,787 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-08 14:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: experiments/constants.py:9
+msgid "unfinished"
+msgstr "onvoltooid"
+
+#: experiments/constants.py:10
+msgid "completed"
+msgstr "voltooid"
+
+#: experiments/constants.py:36
+msgid "No Topology"
+msgstr "Geen Topologie"
+
+#: experiments/constants.py:37
+msgid "Group game"
+msgstr "Groepsspel"
+
+#: experiments/constants.py:49
+msgid "uniform distribution"
+msgstr "uniforme kansverdeling"
+
+#: experiments/constants.py:50
+msgid "normal distribution"
+msgstr "normaalverdeling"
+
+#: experiments/constants.py:57
+msgid "0 EMUs"
+msgstr "0 EMUs"
+
+#: experiments/constants.py:58
+msgid "2 EMUs"
+msgstr "2 EMUs"
+
+#: experiments/constants.py:59
+msgid "4 EMUs"
+msgstr "4 EMUs"
+
+#: experiments/constants.py:72 experiments/constants.py:134
+msgid "Male"
+msgstr "Man"
+
+#: experiments/constants.py:73 experiments/constants.py:135
+msgid "Female"
+msgstr "Vrouw"
+
+#: experiments/constants.py:74 experiments/constants.py:178
+msgid "Other"
+msgstr "Anders"
+
+#: experiments/constants.py:89
+msgid "Inactive"
+msgstr "Inactief"
+
+#: experiments/constants.py:90 experiments/templates/experiments/index.html:19
+#: experiments/templates/registration/login.html:36
+msgid "Login"
+msgstr "Login"
+
+#: experiments/constants.py:91
+#: experiments/templates/experiments/instructions.html:8
+#: experiments/templates/experiments/instructions2.html:7
+msgid "Instructions"
+msgstr "Instructies"
+
+#: experiments/constants.py:92 experiments/templates/experiments/test.html:9
+msgid "Test"
+msgstr "Test"
+
+#: experiments/constants.py:93
+msgid "Game wait (S1)"
+msgstr "Spel wacht (S1)"
+
+#: experiments/constants.py:94
+msgid "Game select action (S2)"
+msgstr "Spel selecteer actie (S2)"
+
+#: experiments/constants.py:95
+msgid "Game view result (S3)"
+msgstr "Spel bekijk resultaat (S3)"
+
+#: experiments/constants.py:96
+msgid "Game check threshold (S4)"
+msgstr "Spel bekijk resultaat (S4)"
+
+#: experiments/constants.py:97
+msgid "Quiz"
+msgstr "Quiz"
+
+#: experiments/constants.py:98
+msgid "End of the experiment"
+msgstr "Einde van het experiment"
+
+#: experiments/constants.py:99
+msgid "Waiting for the other players..."
+msgstr "Wachten op de andere spelers..."
+
+#: experiments/constants.py:106
+msgid "Transition Game"
+msgstr ""
+
+#: experiments/constants.py:107
+msgid "Transition Prediction"
+msgstr ""
+
+#: experiments/constants.py:108
+msgid "Transition Risk"
+msgstr ""
+
+#: experiments/constants.py:109
+msgid "Not in a transition"
+msgstr ""
+
+#: experiments/constants.py:111
+#: experiments/templates/experiments/roundpred.html:37
+msgid "Please, estimate the current total content of the public account"
+msgstr "Gelieve de huidige totale inhoud van de Publieke Rekening te schatten"
+
+#: experiments/constants.py:117
+msgid "Threshold not met and loss"
+msgstr "Hoeveelheid niet bereikt en verlies"
+
+#: experiments/constants.py:118
+msgid "Threshold not met, but no loss"
+msgstr "Hoeveelheid niet bereikt, maar geen verlies"
+
+#: experiments/constants.py:119
+msgid "Threshold met"
+msgstr "Hoeveelheid bereikt"
+
+#: experiments/constants.py:127
+msgid "Yes"
+msgstr "Ja"
+
+#: experiments/constants.py:128
+msgid "No"
+msgstr "Neen"
+
+#: experiments/constants.py:136
+msgid "Undefined"
+msgstr "Onbepaald"
+
+#: experiments/constants.py:138
+msgid "Please, select your gender"
+msgstr "Gelieve uw geslacht te selecteren"
+
+#: experiments/constants.py:139
+msgid "Enter your age"
+msgstr "Geef uw leeftijd"
+
+#: experiments/constants.py:140
+msgid "Indicate your level of studies (e.g. master)"
+msgstr "Duid uw studieniveau aan (bijvoorbeeld master)"
+
+#: experiments/constants.py:141
+msgid "Indicate your field of studies (e.g. Chemistry)"
+msgstr "Duid uw studierichting aan (bijvoorbeeld Chemie)"
+
+#: experiments/constants.py:142
+msgid "Indicate your current profession (e.g. Student)"
+msgstr "Duid uw huidig beroep aan (bijvoorbeeld Student)"
+
+#: experiments/constants.py:143
+msgid "Do you have any previous knowledge of Game Theory?"
+msgstr "Heeft u enige voorkennis over Speltheorie?"
+
+#: experiments/constants.py:144
+msgid "Do you know which game have you played in this experiment?"
+msgstr "Weet u welk spel u heeft gespeeld ijn dit experiment?"
+
+#: experiments/constants.py:146
+msgid ""
+"If you answered yes on the previous question, please describe in a few "
+"sentences the game you have played."
+msgstr ""
+"Als je positief hebt geantwoord op de voorgaande vraag, gelieve dan in "
+"enkele zinnen het spel te beschrijven."
+
+#: experiments/constants.py:147
+msgid "How did you expect the game would end and why?"
+msgstr "Had u de uitkomst van het spel verwacht en waarom?"
+
+#: experiments/constants.py:149
+msgid ""
+"Did the information about the actions of other players influence your "
+"decisions? If yes, in which way?"
+msgstr ""
+"Heeft de informatie over de acties van de andere spelers, die op het einde "
+"van iedere ronde getoond werd, uw beslissingen beïnvloed? Op welke manier?"
+
+#: experiments/constants.py:150
+msgid ""
+"Did the risk of losing all your EMUs influence your decisions? In which way?"
+msgstr ""
+"Heeft het risico om al je EMUs kwijt te spelen je beslissingen beinvloed?Op "
+"welke manier?"
+
+#: experiments/constants.py:152
+msgid ""
+"Did you expect the other players to contribute more? If not, did you expect "
+"them to contribute less? Explain briefly your answer?"
+msgstr ""
+"Had u verwacht dat de andere spelers meer zouden bijdragen? Indien niet, had "
+"u verwacht dat de andere spelers minder zouden bijdragen? Verklaar kort je "
+"antwoord?"
+
+#: experiments/constants.py:155
+msgid ""
+"Did you consider fairness in your decisions? Or did you only try to keep as "
+"much as possible?"
+msgstr ""
+"Hield u rekening met eerlijkheid in uw beslissingen? Of probeerde u enkel zo "
+"veel mogelijk over te houden?"
+
+#: experiments/constants.py:158
+msgid "high school"
+msgstr "secundair onderwijs"
+
+#: experiments/constants.py:159
+msgid "bachelor"
+msgstr "bachelor"
+
+#: experiments/constants.py:160
+msgid "master"
+msgstr "master"
+
+#: experiments/constants.py:161
+msgid "PhD"
+msgstr "PhD"
+
+#: experiments/constants.py:162
+msgid "postdoctoral"
+msgstr "postdoc"
+
+#: experiments/constants.py:163 experiments/constants.py:186
+msgid "other"
+msgstr "Andere"
+
+#: experiments/constants.py:167
+msgid "Economy"
+msgstr "Economie"
+
+#: experiments/constants.py:168
+msgid "Psychology"
+msgstr "Psychologie"
+
+#: experiments/constants.py:169
+msgid "Computer Science"
+msgstr "Computerwetenschappen"
+
+#: experiments/constants.py:170
+msgid "Engineering"
+msgstr "Ingenieur"
+
+#: experiments/constants.py:171
+msgid "Languages"
+msgstr "Talen"
+
+#: experiments/constants.py:172
+msgid "Physics"
+msgstr "Fysica"
+
+#: experiments/constants.py:173
+msgid "Chemistry"
+msgstr "Scheikunde"
+
+#: experiments/constants.py:174
+msgid "Biology"
+msgstr "Biologie"
+
+#: experiments/constants.py:175
+msgid "Bio-informatics"
+msgstr "Bio-informatica"
+
+#: experiments/constants.py:176
+msgid "Mathematics"
+msgstr "Wiskunde"
+
+#: experiments/constants.py:177
+msgid "Social Sciences"
+msgstr "Sociale Wetenschappen"
+
+#: experiments/constants.py:182
+msgid "student"
+msgstr "student"
+
+#: experiments/constants.py:183
+msgid "researcher"
+msgstr "onderzoeker"
+
+#: experiments/constants.py:184
+msgid "professor"
+msgstr "professor"
+
+#: experiments/constants.py:185
+msgid "employee"
+msgstr "werknemer"
+
+#: experiments/constants.py:190
+msgid ""
+"Did you expect the experiment to last longer or shorter that it did? How did "
+"it affect your decisions?"
+msgstr ""
+"Had je verwacht dat het experiment langer of korter zou duren? Hoe heeft dit "
+"uw beslissingen beïnvloed?"
+
+#: experiments/constants.py:191
+msgid "How did you get to know about our Experiments?"
+msgstr "Hoe heb je onze experimenten leren kennen?"
+
+#: experiments/constants.py:192
+msgid "Do you have any suggestions or comments about the experiment?"
+msgstr "Heb je eventuele suggesties of opmerkingen over het experiment?"
+
+#: experiments/forms.py:91
+#, python-format
+msgid ""
+"Session with id %(session_id)s does not exist, please enter a valid session."
+msgstr ""
+
+#: experiments/models.py:489
+msgid "Experiment instructions"
+msgstr "Instructies voor het experiment"
+
+#: experiments/templates/experiments/admin/base.html:4
+#: experiments/templates/experiments/base.html:4
+#: experiments/templates/experiments/base_deprecated.html:4
+#: experiments/templates/experiments/base_game.html:4
+#: experiments/templates/experiments/base_no_footer.html:4
+msgid "BEEL-Experiments"
+msgstr "BEEL-Experimenten"
+
+#: experiments/templates/experiments/admin/index.html:16
+msgid "Select experiment to run now"
+msgstr "Selecteer het experiment om nu uit te voeren"
+
+#: experiments/templates/experiments/admin/index.html:23
+msgid "Update"
+msgstr "Update"
+
+#: experiments/templates/experiments/admin/index.html:29
+#, python-format
+msgid ""
+"\n"
+"                        Experiment: %(experiment_name)s | Treatment: "
+"%(treatment_name)s | Session: %(session_number)s\n"
+"                    "
+msgstr ""
+"\n"
+"                        Experiment: %(experiment_name)s | Treatment: "
+"%(treatment_name)s | Session: %(session_number)s\n"
+"                    "
+
+#: experiments/templates/experiments/admin/index.html:32
+msgid "Players"
+msgstr "Spelers"
+
+#: experiments/templates/experiments/admin/index.html:61
+msgid "Monitor Game"
+msgstr "Monitor Spel"
+
+#: experiments/templates/experiments/admin/monitor.html:7
+msgid "Home"
+msgstr "Thuis"
+
+#: experiments/templates/experiments/admin/monitor.html:8
+msgid "Experiments admin"
+msgstr "Experimenten admin"
+
+#: experiments/templates/experiments/admin/monitor.html:22
+#, python-format
+msgid ""
+"Group\n"
+"                        %(group_number)s "
+msgstr ""
+"Groep\n"
+"                        %(group_number)s "
+
+#: experiments/templates/experiments/admin/monitor.html:25
+#, python-format
+msgid ""
+"\n"
+"                            final round: %(finishing_round)s dice_results: "
+"%(dice_results)s\n"
+"                        "
+msgstr ""
+
+#: experiments/templates/experiments/admin/monitor.html:55
+msgid "No active members in the group."
+msgstr "Geen actieve leden in de groep."
+
+#: experiments/templates/experiments/admin/monitor.html:59
+msgid "Public account"
+msgstr "Publieke rekening"
+
+#: experiments/templates/experiments/admin/monitor.html:70
+msgid "Back to admin"
+msgstr "Terug naar admin"
+
+#: experiments/templates/experiments/game.html:7
+#: experiments/templates/experiments/index.html:5
+#: experiments/templates/experiments/risk_check.html:6
+#: experiments/templates/experiments/roundpred.html:7
+#: experiments/templates/experiments/roundres.html:6
+#: experiments/templates/registration/login.html:5
+msgid "BEEL-Experiment"
+msgstr "BEEL-Experiment"
+
+#: experiments/templates/experiments/game.html:15
+#: experiments/templates/experiments/roundpred.html:21
+#, python-format
+msgid ""
+"\n"
+"                        round %(current_round)s of minimum %(total_rounds)s\n"
+"                    "
+msgstr ""
+"\n"
+"                        ronde %(current_round)s van minimum "
+"%(total_rounds)s\n"
+"                    "
+
+#: experiments/templates/experiments/game.html:19
+#: experiments/templates/experiments/roundpred.html:25
+#, python-format
+msgid ""
+"\n"
+"                        round %(current_round)s of %(total_rounds)s\n"
+"                    "
+msgstr ""
+"\n"
+"                    ronde %(current_round)s van %(total_rounds)s\n"
+"                "
+
+#: experiments/templates/experiments/game.html:33
+msgid "Donations of the previous round"
+msgstr "Donaties van de vorige ronde"
+
+#: experiments/templates/experiments/game.html:38
+msgid "You"
+msgstr "U"
+
+#: experiments/templates/experiments/game.html:40
+msgid "Other members of the group"
+msgstr "Andere leden van de groep"
+
+#: experiments/templates/experiments/game.html:51
+msgid "No actions to show"
+msgstr "Geen acties om te tonen"
+
+#: experiments/templates/experiments/game.html:57
+#, python-format
+msgid ""
+"\n"
+"                            How many %(currency_name)s do you want to "
+"contribute to the public account in this\n"
+"                            round?\n"
+"                        "
+msgstr ""
+"\n"
+"                            Hoeveel %(currency_name)s wilt u bijdragen aan "
+"de publieke rekening in deze\n"
+"                            ronde?\n"
+"                        "
+
+#: experiments/templates/experiments/game.html:63
+msgid "Select one of the following options."
+msgstr "Selecteer één van de volgende opties."
+
+#: experiments/templates/experiments/game.html:90
+#: experiments/templates/experiments/roundpred.html:68
+msgid "Time left"
+msgstr "Resterende tijd"
+
+#: experiments/templates/experiments/game.html:99
+#: experiments/templates/experiments/roundpred.html:77
+msgid "Personal Account"
+msgstr "Persoonlijke Rekening"
+
+#: experiments/templates/experiments/index.html:7
+#: experiments/templates/registration/login.html:7
+msgid "Brussels Experimental Economics Laboratory"
+msgstr "Brussels Experimental Economics Laboratory"
+
+#: experiments/templates/experiments/index.html:10
+#: experiments/templates/registration/login.html:28
+msgid "Sign in to the experiment"
+msgstr "Aanmelden op het experiment"
+
+#: experiments/templates/experiments/index.html:18
+msgid "Enter Password"
+msgstr "Voer wachtwoord in"
+
+#: experiments/templates/experiments/index.html:21
+msgid "language"
+msgstr "taal"
+
+#: experiments/templates/experiments/instructions.html:6
+#: experiments/templates/experiments/instructions2.html:5
+msgid "BEEL-Instructions"
+msgstr "BEEL-Instructies"
+
+#: experiments/templates/experiments/instructions.html:26
+msgid "Previous"
+msgstr "Voorgaand"
+
+#: experiments/templates/experiments/instructions.html:30
+#: experiments/templates/experiments/instructions.html:33
+#: experiments/templates/experiments/risk_check.html:62
+#: experiments/templates/experiments/roundres.html:35
+#: experiments/templates/experiments/roundres.html:38
+msgid "Next"
+msgstr "Volgende"
+
+#: experiments/templates/experiments/risk_check.html:8
+msgid "Result"
+msgstr "Resultaat"
+
+#: experiments/templates/experiments/risk_check.html:11
+msgid "Results"
+msgstr "Resultaten"
+
+#: experiments/templates/experiments/risk_check.html:17
+#, python-format
+msgid ""
+"\n"
+"                        Your group collected %(public_account)s EMUs, which "
+"is lower than %(threshold)s EMUs. The\n"
+"                        server has generated a random number between 1 and "
+"100. The resulting value is %(random_value)s, which\n"
+"                        is smaller than 91. This means that you all <b>lose "
+"the remaining endowment</b> in your private\n"
+"                        accounts. Please fill in the amount in Euro’s you "
+"see on this screen on the payment document you\n"
+"                        received before clicking the continue button. This "
+"amount is the show-up fee.”\n"
+"                    "
+msgstr ""
+"\n"
+"                        Je groep verzamelde %(public_account)s EMUs, wat "
+"minder is dan %(threshold)s EMUs. De\n"
+"                        server genereerde een willekeurig getal tussen 1 en "
+"100. Het resultaat is %(random_value)s, wat\n"
+"                        kleiner is dan 91. Dit betekent dat jullie <b> de de "
+"EMUs die overbleven in jullie privé\n"
+"                        rekening verliezen </b>. Gelieve het bedrag in "
+"Euro's  op dit scherm in te vullen op het betalings-\n"
+"                        document dat jullie hebben ontvangen vooraleer op  "
+"Verdergaan te klikken. Dit bedrag is het deelname bedrag.”\n"
+"                    "
+
+#: experiments/templates/experiments/risk_check.html:27
+#, python-format
+msgid ""
+"\n"
+"                        Your group collected %(public_account)s EMUs, which "
+"is lower than %(threshold)s EMUs. The\n"
+"                        server has generated a random number between 1 and "
+"100. The resulting value is %(random_value)s, which\n"
+"                        is bigger than 90. This means that you all <b>win "
+"the remaining endowment</b> in your private\n"
+"                        accounts. Please fill in the amount in Euro’s you "
+"see on this screen on the payment document you\n"
+"                        received before clicking the continue button. This "
+"amount consists of both your private winnings\n"
+"                        and the show-up fee.\n"
+"                    "
+msgstr ""
+"\n"
+"                        Je groep heeft %(public_account)s EMUs verzamelt, "
+"wat minder is dan %(threshold)s EMUs. De\n"
+"                        server genereerde een willekeurig getal tussen 1 en "
+"100. Het resultaat is %(random_value)s, wat\n"
+"                        groter is dan 90. Dit betekent dat jullie <b> de de "
+"EMUs die overbleven in jullie privé\n"
+"                        rekening toch krijgen </b>. Gelieve het bedrag in "
+"Euro's  op dit scherm in te vullen op het betalings-\n"
+"                        document dat jullie hebben ontvangen vooraleer op  "
+"Verdergaan te klikken. Dit bedrag omvat je persoonlijke winst en het "
+"deelname                         bedrag.”\n"
+"                    "
+
+#: experiments/templates/experiments/risk_check.html:38
+#, python-format
+msgid ""
+"\n"
+"                        CONGRATULATIONS! ! Your group collected "
+"%(public_account)s EMUs, which is greater or equal to\n"
+"                        %(threshold)s EMUs. So <b>you may keep the amount "
+"remaining in your private account</b>.\n"
+"                        Please fill in the amount in Euro’s you see on this "
+"screen on the payment document you received\n"
+"                        before clicking the continue button. This amount "
+"consists of both your private winnings and the\n"
+"                        show-up fee.”\n"
+"                    "
+msgstr ""
+"\n"
+"                        PROFICIAT! je groep heeft %(public_account)s EMUs "
+"verzamelt, wat gelijk is of meer dan \n"
+"                        %(threshold)s EMUs. <b>Je mag het resterende bedrag "
+"in je private rekening behouden</b>.\n"
+"                        Vul het bedrag in Euro’s dat je ziet op het scherm  "
+"in op het betalingsformulier dat je hebt gekregen \n"
+"                        aan het begin van het experiment. \n"
+"Het bedrag bestaat uit zowel de resterende EMUs als ook het bedrag dat je \n"
+"                        krijgt om deel te nemen aan dit experiment.”\n"
+"                    "
+
+#: experiments/templates/experiments/risk_check.html:48
+#, python-format
+msgid ""
+"\n"
+"                    The amount remaining on your private account is %(emus)s "
+"EMUs and your final winnings are\n"
+"                    %(euros)s euros.\n"
+"                "
+msgstr ""
+"\n"
+"                    Het resterende bedrag op je persoonlijke rekening is "
+"%(emus)s EMUs en je persoonlijke winst is\n"
+"                    %(euros)s Euro.\n"
+"                "
+
+#: experiments/templates/experiments/risk_check.html:54
+msgid ""
+"\n"
+"                    Please, click <b>next</b>, and complete a quick "
+"questionnaire.\n"
+"                "
+msgstr ""
+"\n"
+"                    Gelieve op <b>volgende</b> te klikken en een korte quiz "
+"te vervolledigen. \n"
+"                "
+
+#: experiments/templates/experiments/roundpred.html:13
+#: experiments/templates/experiments/roundres.html:8
+msgid "Game"
+msgstr "Spel"
+
+#: experiments/templates/experiments/roundpred.html:39
+#: experiments/templates/experiments/test.html:77
+#: experiments/templates/experiments/userinfo.html:22
+msgid "Submit"
+msgstr "Indienen"
+
+#: experiments/templates/experiments/roundpred.html:46
+#, python-format
+msgid ""
+"\n"
+"                    The result of the dice was %(dice_result)s. Therefore, "
+"the experiment will end.\n"
+"                    Please, click now on the button Ok.\n"
+"                "
+msgstr ""
+"\n"
+"                    Het resultaat van de dobbelsteen was %(dice_result)s. "
+"Daarom zal het experiment stoppen.\n"
+"                    Gelieve nu op de knop “Oké” te klikken.\n"
+"                "
+
+#: experiments/templates/experiments/roundpred.html:51
+#, python-format
+msgid ""
+"\n"
+"                    The result of the dice was %(dice_result)s, which is "
+"different from\n"
+"                "
+msgstr ""
+"\n"
+"                    Het resultaat van de dobbelsteen was %(dice_result)s, "
+"wat  verschillend is van\n"
+"                "
+
+#: experiments/templates/experiments/roundpred.html:55
+msgid "or"
+msgstr "of"
+
+#: experiments/templates/experiments/roundpred.html:57
+msgid ""
+"\n"
+"                    Therefore, the experiment will continue to the next "
+"round.\n"
+"                    Please, click now on the button Ok.\n"
+"                "
+msgstr ""
+"\n"
+"                    Daarom zal het experiment verder gaan naar de volgende "
+"ronde.\n"
+"                    Gelieve nu op de knop “Oké” te klikken.\n"
+"                "
+
+#: experiments/templates/experiments/test.html:7
+msgid "BEEL-Test"
+msgstr "BEEL-Test"
+
+#: experiments/templates/experiments/test.html:15
+msgid ""
+"\n"
+"                Please, complete the following test to check your "
+"comprehension of the instructions:\n"
+"            "
+msgstr ""
+"\n"
+"                Gelieve de volgende test, die uw begrip van de  instructies "
+"test, in te vullen.\n"
+"            "
+
+#: experiments/templates/experiments/thanks.html:5
+msgid "BEEL-Good Bye"
+msgstr "BEEL-Tot ziens"
+
+#: experiments/templates/experiments/thanks.html:10
+msgid "Thank you for participating!"
+msgstr "Bedankt voor het meedoen!"
+
+#: experiments/templates/experiments/thanks.html:12
+msgid ""
+"\n"
+"                Before leaving, please click on the following link to "
+"logout.\n"
+"            "
+msgstr ""
+"\n"
+"                Voor dat je vertrekt, gelieve op de volgende link te "
+"klikken  om uit te loggen.\n"
+"            "
+
+#: experiments/templates/experiments/userinfo.html:5
+msgid "BEEL-Survey"
+msgstr "BEEL-Enquête"
+
+#: experiments/templates/experiments/userinfo.html:7
+msgid "Survey"
+msgstr "Enquête"
+
+#: experiments/templates/experiments/userinfo.html:14
+msgid ""
+"\n"
+"                Please, fill in the following survey.\n"
+"            "
+msgstr ""
+"\n"
+"                Gelieve de volgende enquête in te vullen.\n"
+"            "
+
+#: experiments/templates/experiments/wait.html:6
+msgid "Experiment | BEEL"
+msgstr "Experiment | BEEL"
+
+#: experiments/templates/experiments/wait.html:11
+msgid "Wait for the rest of the members of the group."
+msgstr "Wacht op de andere leden van de groep"
+
+#~ msgid ""
+#~ "\n"
+#~ "                    The result of the dice was %(dice_result)s, which is "
+#~ "different from “1” or “2”.\n"
+#~ "                    Therefore, the experiment will continue to the next "
+#~ "round.\n"
+#~ "                    Please, click now on the button Ok.\n"
+#~ "                "
+#~ msgstr ""
+#~ "\n"
+#~ "                    Het resultaat van de dobbelsteen was %(dice_result)s, "
+#~ "wat  verschillend is van “1” of “2”.\n"
+#~ "                    Daarom zal het experiment verder gaan naar de "
+#~ "volgende ronde.\n"
+#~ "                    Gelieve nu op de knop “Oké” te klikken.\n"
+#~ "                "

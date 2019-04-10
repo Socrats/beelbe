@@ -1,0 +1,33 @@
+{% load static %}
+{% load i18n %}
+
+<title>{% block title %}{% trans "BEEL-Experiments" %}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'experiments/style.css' %}"/>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<div class="bkimg w3-display-container w3-animate-opacity w3-text-white">
+    <div id="w3-container menubar">
+        {% block menubar %}
+        <div class="w3-display-topleft w3-padding-large w3-xlarge">
+            Brussels Experimental Economics Laboratory
+        </div>
+
+        <div class="w3-container w3-display-topright w3-padding-large">
+
+                <img src="{% static "experiments/images/logo4_0.png" %}" style="width:48px;height:48px;">
+                <img src="{% static "experiments/images/ulbgiggrand.gif" %}" style="width:48px;height:48px;">
+                <img src="{% static "experiments/images/fwo_blokbeeld.jpeg" %}" style="width:48px;height:48px;">
+        </div>
+        {% endblock %}
+    </div>
+
+    <div id="content" class="w3-container w3-display-middle">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div id="footer" class="w3-container w3-display-bottomleft w3-padding-large">
+        Created by <a style="text-decoration: none;color:cadetblue" href="https://twitter.com/esocrats">@esocrats</a>
+    </div>
+</div>

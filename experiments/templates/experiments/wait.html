@@ -1,0 +1,50 @@
+{% extends "experiments/base_game.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{% trans "Experiment | BEEL" %}{% endblock %}
+
+{% block content %}
+
+    <div class="w3-col w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+        <p>{% trans "Wait for the rest of the members of the group." %}</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            request();
+        });
+        function request() {
+            console.log("create post is working!"); // sanity check
+            $.ajax({
+                url: "{% url 'experiments:sync' session_id %}", // the endpoint
+                type: "POST", // http method
+                data: {
+                    session_id: {{session_id}},
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                }, // data sent with the post request
+
+                // handle a successful response
+                success: function (json) {
+                    if (json['can_continue']) {
+                        console.log("can_continue");
+                        $(window).off("beforeunload");
+                        $(location).attr('href', "{{ next }}")
+                    }
+                    console.log(json); // log the returned json to the console
+                    console.log("success"); // another sanity check
+                    setTimeout(request, 10000); // 10 seconds
+                },
+
+                // handle a non-successful response
+                error: function (xhr, errmsg, err) {
+                    console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                }
+            });
+        }
+
+
+    </script>
+
+{% endblock %}

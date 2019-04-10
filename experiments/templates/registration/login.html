@@ -1,0 +1,51 @@
+{% extends "experiments/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "BEEL-Experiment" %}{% endblock %}
+
+{% block headname %}{% trans "Brussels Experimental Economics Laboratory" %}{% endblock %}
+
+{% block content %}
+    <form class="w3-border-0 w3-padding" action="{% url 'experiments:set_language' %}" method="post">
+        {% csrf_token %}
+        <div class="w3-dropdown-hover">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_language_info for LANGUAGE_CODE as lang %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            <button class="btn btn-info">{{ lang.name_local }} ({{ lang.code }})</button>
+            <div class="w3-dropdown-content w3-bar-block w3-border">
+                {% for language in languages %}
+                    <button name="language" type="submit" class="w3-bar-item w3-button btn-info"
+                            value="{{ language.code }}">
+                        {{ language.name_local }} ({{ language.code }})
+                    </button>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+    <h1 class="w3-opacity w3-center">{% trans "Sign in to the experiment" %}</h1>
+    <div class="w3-panel w3-white w3-card-2 w3-display-container w3-padding-16">
+        <div class="w3-margin-top w3-large w3-center">
+            <form class="w3-border-0" id="login" method="post">
+                {% csrf_token %}
+                <div class="w3-reponsive">
+                    {{ form.as_p }}
+                </div>
+                <button type="submit" value="psw" class="btn btn-success">{% trans "Login" %}</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+<script>
+    $(document).ready(function () {
+        window.location.hash = "no-back-button";
+        window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+        window.onhashchange = function () {
+            window.location.hash = "no-back-button";
+        }
+    });
+</script>
