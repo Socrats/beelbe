@@ -1,5 +1,7 @@
+[![DOI](https://zenodo.org/badge/179317981.svg)](https://zenodo.org/badge/latestdoi/179317981)
+
 # beelbe
-Platform for behavioural experiments
+Web platform for behavioural experiments
 
 ## Installation
 This project is implemented as a Django plug-in.
@@ -38,3 +40,19 @@ This will start your server on IP 0.0.0.0 and port 8000. Now, you can go to your
 ```.bash
 http://0.0.0.0:8000/admin
 ``` 
+
+## Citing
+
+You may cite this repository in the following way:
+
+```latex
+@misc{Fernandez2020b,
+  author = {Fernández Domingos, Elias},
+  title = {beelbe: Web platform for behavioural experiments},
+  year = {2020},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/Socrats/beelbe}},
+  doi = {10.5281/zenodo.4000003}
+}
+```
